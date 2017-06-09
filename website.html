@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.scss"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="css/joint-1.10.0.min.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <!-- Language highlighting
+   (A prebuilt version of highlight.js with 22 commonly used languages)
+   see: https://highlightjs.org/download/-->
+    <link rel="stylesheet" href="https:////cdn.jsdelivr.net/highlight.js/9.9.0/styles/default.min.css">
+    <script src="https:////cdn.jsdelivr.net/highlight.js/9.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/json.min.js"></script>
+
+    <script> hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-md-2 sidebar general-padding">
+        <header class="center-center white-text">
+            <!--<a href="https://www.upc.edu"><img class="logo" src="img/UPC-logo.png" alt="UPC-logo"></a>-->
+            <!--<a href="https://www.ca.com/es.html"><img class="logo" src="img/CA-logo.png" alt="CA-logo"></a>-->
+            <div class="header-section">
+                <div class="title-wrapper"><h2 class="title">CrowdWon Editor</h2></div>
+                <h3 class="subtitle">A visual tool for writing in CrowdWon</h3>
+            </div>
+            <hr class="divider">
+        </header>
+        <div id="stencil"></div>
+        <hr class="divider">
+        <div class="wrap">
+            <div>
+
+            </div>
+        </div>
+        <footer class="center-center subtitle white-text" style="position: relative; bottom: 15px; ">
+            <a class="white-text no-link on-a" href="https://www.ca.com/es.html">CA - Technologies</a><br>
+            <a class="white-text no-link on-a" href="https://www.fib.upc.edu/fib.html">UPC - FIB</a><br>
+            Apache License 2.0 2017
+        </footer>
+    </div>
+    <div class="col-md-8 general-padding">
+        <div>
+            <div class=col-sm-1>
+                <span title="New Canvas" id="delete" class="glyphicon glyphicon-file white-text"></span>
+            </div>
+            <div class=col-sm-1>
+                <span title="Import Diagram" id="imp-tool" data-toggle="modal" data-target="#import" class="glyphicon glyphicon-import white-text">
+                </span>
+            </div>
+            <div class=col-sm-1>
+                <span title="Export Diagram" id="exp" data-toggle="modal" data-target="#export" class="glyphicon glyphicon-export white-text"></span>
+            </div>
+            <div class=col-sm-1>
+                <span title="Zoom" id="zoom" class="glyphicon glyphicon-zoom-in white-text"></span>
+            </div> 
+            <div class=col-sm-2>
+            	<div class="range-slider">
+  					<input  id="slider" class="range-slider__range" type="range" value="5" min="0" max="10">
+				</div> 
+			</div>
+			<div class=col-sm-1 id="help-class">
+                <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/viewFile/9612/9339" target="_blank"> <span title="What is Crowdwon?" id="help" class="glyphicon glyphicon-question-sign white-text"></span></a>
+            </div>  
+        </div>
+        <div id="paper">
+
+        </div>
+    </div>
+    <div class="col-md-2 sidebar general-padding">
+        <div>
+            <div id="type-selector" class="form-group">
+                <label for="type">Type</label>
+                <select class="form-control" id="type"></select>
+            </div>
+            <div id="generator-qt-input" class="form-group">
+                <label for="generator-qt">Quantity</label>
+                <input type="number" class="form-control" id="generator-qt">
+            </div>
+            <div id="loop-condition-input" class="form-group">
+                <label for="generator-qt">Stop Condition</label>
+                <textarea class="form-control" rows="5" id="loop-condition"></textarea>
+            </div>
+            <div id="task-input" class="form-group">
+                <label for="task">Task</label>
+                <input type="text" class="form-control" id="task">
+            </div>
+            <div id="description-input" class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" rows="5" id="description"></textarea>
+            </div>
+            <div id="token" class="form-group">
+                <label for="description">Typein</label>
+                <textarea class="form-control" rows="1" id="typein"></textarea>
+                <label for="description">Typeout</label>
+                <textarea class="form-control" rows="1" id="typeout"></textarea>
+            </div>
+            <div id="link-input" class="form-group">
+                <label for="description">Link Condition</label>
+                <textarea class="form-control" rows="5" id="link"></textarea>
+            </div>
+        </div>
+
+        <div class="wrap" style="position: absolute; bottom: 10px; left: 40px; width: 100%;">
+            <hr class="divider">
+            <div class="on-div div-list-item center-center" onclick="isValid()">
+                <a href="#" class="white-text no-link on-a" onclick="isValid()">VALIDATE</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal export -->
+<div class="modal fade bd-example-modal-lg" id="export" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title modal-lg">Export</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+       	<pre>
+            <code id="result"></code>
+        </pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button onclick="copyToClipboard('#result')" data-dismiss="modal" type="button" class="btn btn-primary">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal import -->
+<div class="modal fade bd-example-modal-lg" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title modal-lg">Import</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div contenteditable="true">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="imp">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/library/jquery-3.1.1.min.js"></script>
+<script src="js/library/lodash-3.10.1.min.js"></script>
+<script src="js/library/backbone-1.3.3.min.js"></script>
+<script src="js/library/joint-1.1.0.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

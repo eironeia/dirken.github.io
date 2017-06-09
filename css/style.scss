@@ -1,0 +1,125 @@
+//colors
+$color_mountain_meadow_approx: #1abc9c;
+$color_mine_shaft_approx: #303030;
+$white: white;
+$color_niagara_approx: #16a085;
+$color_watercourse_approx: #136d5a;
+
+//fonts
+$font_0: Roboto;
+$font_1: sans-serif;
+
+//@extend-elements
+//original selectors
+//html, body, .row, .sidebar, .sidebar2 .content
+%extend_1 {
+	height: 100%;
+	font-family: $font_0, $font_1;
+	font-style: normal;
+	overflow: hidden;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	@extend %extend_1;
+}
+body {
+	@extend %extend_1;
+}
+.row {
+	@extend %extend_1;
+}
+.sidebar {
+	@extend %extend_1;
+	background-color: $color_mountain_meadow_approx;
+	height: 100%;
+	z-index: 10;
+	padding-left: 25px !important;
+	border-right: 10px solid $color_mine_shaft_approx;
+	overflow-y: auto;
+}
+.sidebar2 {
+	background-color: $color_mountain_meadow_approx;
+	height: 100%;
+	z-index: 10;
+	right: 0;
+	float: right !important;
+	width: 12% !important;
+	border-left: 10px solid $color_mine_shaft_approx;
+	.content {
+		@extend %extend_1;
+	}
+}
+
+.general-padding {
+	padding-top: 40px;
+}
+.white-text {
+	color: $white;
+}
+.title {
+	font-size: 20px;
+	font-weight: bold;
+}
+.subtitle {
+	font-size: 13px;
+	margin: -5%;
+}
+.logo {
+	width: 40%;
+	height: 40%;
+	margin-top: -15%;
+}
+.divider {
+	border-color: $color_niagara_approx;
+	margin: 10px 0;
+}
+.center-center {
+	vertical-align: baseline;
+	text-align: center;
+}
+.sidebar-wrapper {
+	padding: 0 40px;
+}
+.wrap {
+	margin: 0 -20px;
+}
+.no-link {
+	text-decoration: none;
+}
+.div-list-item {
+	padding: 10px 0;
+}
+.crowdwon-item {
+	height: 30%;
+	width: 30%;
+}
+.content {
+	width: 100%;
+	height: 100%;
+	margin: -5%;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+#paper {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+.on-div:hover {
+	background-color: $color_niagara_approx;
+	cursor: pointer;
+}
+.on-a:hover {
+	text-decoration: none;
+	color: $color_watercourse_approx;
+}
+hr.divider {
+	border-style: dashed;
+	border-color: $color_mine_shaft_approx;
+	margin: 15px;
+}
