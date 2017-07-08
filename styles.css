@@ -1,0 +1,45 @@
+body {
+    font-family: 'Annie Use Your Telescope';
+    padding-right: 30%;
+	padding-left: 30%;
+	font-size: 20px;
+}
+h2 {
+	color: #28d1d1;
+}
+.github-corner{
+	fill: black;
+	color: white; 
+	position: absolute; 
+	top: 0; 
+	border: 0; 
+	right: 0;
+}
+.octo-arm{
+	transform-origin: 130px 106px;
+	fill: white; 
+}
+.octo-body{
+	fill: white;
+}
+.images{
+	width: 3em;
+	height: 3em;
+}
+.title-about{
+	display: inline;
+}
+.profile{
+	width: 250px;
+	border-radius: 90px;
+}
+.top-corner{
+	position: absolute; 
+	top: 0; 
+	border: 0; 
+	left: 0;
+}
+.sns{
+	width: 2em;
+	height: 2em;
+}
