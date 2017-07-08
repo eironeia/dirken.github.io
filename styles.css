@@ -1,10 +1,10 @@
 body {
     font-family: 'Annie Use Your Telescope';
-    padding-right: 30%;
-	padding-left: 30%;
+    padding-right: 25%;
+	padding-left: 25%;
 	font-size: 20px;
 }
-h2 {
+h2,h3 {
 	color: #28d1d1;
 }
 .github-corner{
@@ -44,4 +44,10 @@ h2 {
 	width: 2em;
 	height: 2em;
 	margin-right: 5%;
+}
+
+.item-repo{
+    height: 80px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
 }
