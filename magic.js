@@ -18,7 +18,7 @@ function callback (data, status, xhr) {
   for (var i = 0; i < 3; ++i) {
     var rowi = "row" + i
     repos.append(
-      "<div id='" + rowi + "' class='row'>"
+      "<div id= '" + rowi + "'  class='row'>"
     )
     for (var j = 0; j < 3; ++j) {
       var repo = data[i*3 + j]
@@ -33,7 +33,7 @@ function callback (data, status, xhr) {
 function printRepo (id, repo) {
   $('#' + id).append(
     "<a class='col-md-3 item-repo' href='" + repo.html_url + "'>" +
-      "<strong>" + repo.name + "</strong><br>"  + /*repo.description +"<br>"*/
+      "<p style='text-transform: uppercase; color: #28d1d1; font-weight: bold;'>" + repo.name + "</p>" + "<p style='color:black'>" +repo.description +"</p><br>"+
     "</a>"
   );
 }
