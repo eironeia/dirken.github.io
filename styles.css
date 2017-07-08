@@ -38,8 +38,10 @@ h2 {
 	top: 0; 
 	border: 0; 
 	left: 0;
+	display: flex;
 }
 .sns{
 	width: 2em;
 	height: 2em;
+	margin-right: 5%;
 }
