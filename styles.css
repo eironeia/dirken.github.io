@@ -30,7 +30,7 @@ h2,h3 {
 	display: inline;
 }
 .profile{
-	width: 250px;
+	width: 65%;
 	border-radius: 90px;
 }
 .top-corner{
@@ -41,8 +41,8 @@ h2,h3 {
 	display: flex;
 }
 .sns{
-	width: 2em;
-	height: 2em;
+	width: 1.5em;
+	height: 1.5em;
 	margin-right: 5%;
 }
 
